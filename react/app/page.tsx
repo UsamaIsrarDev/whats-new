@@ -1,29 +1,40 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Profile from "./components/Profile";
-import Button from "./components/Button";
+import AdminPanal from "./components/AdminPanal";
+import LoginForm from "./components/LoginForm";
+import ShoppingList from "./components/ShoppingList";
 
-function MyButton() {
-  return <button>I'm a button</button>;
+function MyButton({ count, handleClick }: any) {
+  return <button onClick={handleClick}>Clicked {count} times</button>;
 }
 
+let isLoggedIn;
+
 const MyApp = () => {
+  const [count, setCount] = useState(0);
+
+  function handleClick() {
+    setCount(count + 1);
+  }
+
   return (
     <div>
-      <h2>Welcome to my App</h2>
+      <h2>Counter that updates together.</h2>
 
-      <MyButton />
+      <MyButton count={count} handleClick={handleClick} />
+      <MyButton count={count} handleClick={handleClick} />
 
-      <br />
-
-      <Button />
-
-      <br />
-
-      <Button />
+      {/* <br />
 
       <Profile />
+
+      <br /> */}
+
+      {/* {isLoggedIn && <AdminPanal />} */}
+
+      {/* <ShoppingList /> */}
     </div>
   );
 };

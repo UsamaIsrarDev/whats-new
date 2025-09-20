@@ -1,27 +1,24 @@
-import { memo } from "react";
-
 const user = {
-  name: "Usama Israr Khan",
-  imgUrl: "https://i.imgur.com/yXOvdOSs.jpg",
-  imgSize: 90,
+  name: "Heddy Lamarr",
+  imageUrl: "https://i.imgur.com/yXOvdOSs.jpg",
+  imageSize: 90,
 };
 
 const Profile = () => {
   return (
-    <div className="Profile">
+    <>
       <h1>{user.name}</h1>
-
       <img
-        src={user.imgUrl}
-        alt={"Profile of " + user.name}
-        className="rounded-full"
+        src={user.imageUrl}
+        alt={"Photo of" + user.name}
         style={{
-          width: user.imgSize,
-          height: user.imgSize,
+          width: user.imageSize,
+          height: user.imageSize,
         }}
+        className="rounded-full"
       />
-    </div>
+    </>
   );
 };
 
-export default memo(Profile);
+export default Profile;
