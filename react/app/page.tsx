@@ -1,10 +1,10 @@
 "use client";
 
 import React, { useState } from "react";
-import Profile from "./components/Profile";
-import AdminPanal from "./components/AdminPanal";
-import LoginForm from "./components/LoginForm";
-import ShoppingList from "./components/ShoppingList";
+// import Profile from "./components/Profile";
+// import AdminPanal from "./components/AdminPanal";
+// import LoginForm from "./components/LoginForm";
+// import ShoppingList from "./components/ShoppingList";
 
 function MyButton({ count, handleClick }: any) {
   return <button onClick={handleClick}>Clicked {count} times</button>;
