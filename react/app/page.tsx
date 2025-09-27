@@ -1,16 +1,34 @@
 "use client";
 
-import React, { useState } from "react";
-// import Profile from "./components/Profile";
-// import AdminPanal from "./components/AdminPanal";
-// import LoginForm from "./components/LoginForm";
-// import ShoppingList from "./components/ShoppingList";
+import { memo, useState } from "react";
+import Profile from "./components/Profile";
+import AdminPanal from "./components/AdminPanal";
+import LoginForm from "./components/LoginForm";
+import ShoppingList from "./components/ShoppingList";
+import MyButton from "./components/MyButton";
 
-function MyButton({ count, handleClick }: any) {
-  return <button onClick={handleClick}>Clicked {count} times</button>;
+// function MyButton() {
+//   return <button>I'm a button</button>;
+// }
+
+let content;
+const isLoggedIn = false;
+
+if (isLoggedIn) {
+  content = <AdminPanal />;
+} else {
+  content = <LoginForm />;
 }
 
-let isLoggedIn;
+const products = [
+  { title: "Cabbage", id: 1 },
+  { title: "Garlic", id: 2 },
+  { title: "Apple", id: 3 },
+];
+
+const listItems = products.map((product) => {
+  return <li key={product.id}>{product.title}</li>;
+});
 
 const MyApp = () => {
   const [count, setCount] = useState(0);
@@ -21,22 +39,28 @@ const MyApp = () => {
 
   return (
     <div>
-      <h2>Counter that updates together.</h2>
-
-      <MyButton count={count} handleClick={handleClick} />
-      <MyButton count={count} handleClick={handleClick} />
-
-      {/* <br />
+      <h2>Welcome to my app!</h2>
+      {/* <MyButton /> */}
 
       <Profile />
 
-      <br /> */}
+      {content}
 
-      {/* {isLoggedIn && <AdminPanal />} */}
+      <div>{isLoggedIn ? <AdminPanal /> : <LoginForm />}</div>
 
-      {/* <ShoppingList /> */}
+      <div>{isLoggedIn && <AdminPanal />}</div>
+
+      <ul>{listItems}</ul>
+
+      <ShoppingList />
+
+      <MyButton />
+
+      <MyButton onClick={handleClick} count={count} />
+      <MyButton onClick={handleClick} count={count} />
+      <MyButton onClick={handleClick} count={count} />
     </div>
   );
 };
 
-export default MyApp;
+export default memo(MyApp);
