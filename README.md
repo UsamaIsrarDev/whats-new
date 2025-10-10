@@ -1,1 +1,1 @@
-Read and practice of react documentation - Sep 13, 25
+Read and practice of react documentation - Oct 09, 25
