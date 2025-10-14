@@ -1,20 +1,37 @@
 import { memo } from "react";
 
-interface MyButtonProps {
-  title: string;
-  disabled: boolean;
+function Button({ onSmash, children }) {
+  return <button onClick={onSmash}>{children}</button>;
 }
 
-function MyButton({ title, disabled }: MyButtonProps) {
-  return <button disabled={disabled}>{title}</button>;
+function AlertButton({ movieName }) {
+  function handleClick() {
+    alert(movieName);
+  }
+
+  return <Button onClick={handleClick}>Play this {movieName} movie.</Button>;
+}
+
+function UploadButton() {
+  return <Button onClick={() => alert("uploading!")}>Upload Image</Button>;
 }
 
 const App = () => {
   return (
-    <div>
-      <h2>App</h2>
-      <MyButton title={"I'm a disabled button"} disabled={true} />
-    </div>
+    <>
+      <AlertButton movieName={"Tarzan"} />
+      <UploadButton />
+
+      <form
+        onSubmit={(e) => {
+          e.preventDefault();
+          alert("Submit Successfully!");
+        }}
+      >
+        <input type="text" />
+        <button>Submit</button>
+      </form>
+    </>
   );
 };
 
