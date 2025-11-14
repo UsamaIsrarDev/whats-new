@@ -1,3 +1,4 @@
+import BucketList from "./components/BucketList";
 import Counter from "./components/Counter";
 import CounterList from "./components/CounterList";
 import Form from "./components/Form";
@@ -19,7 +20,8 @@ export default function Home() {
       {/* <List /> */}
       {/* <ShapeEditor /> */}
       {/* <CounterList /> */}
-      <ListTwo />
+      {/* <ListTwo /> */}
+      <BucketList />
     </>
   );
 }
