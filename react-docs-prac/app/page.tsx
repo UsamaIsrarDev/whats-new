@@ -7,6 +7,8 @@ import List from "./components/List";
 import ListTwo from "./components/ListTwo";
 import Message from "./components/Message";
 import MovingDot from "./components/MovingDot";
+import NewBucketList from "./components/NewBucketList";
+import Practice from "./components/Practice";
 import ShapeEditor from "./components/ShapeEditor";
 
 export default function Home() {
@@ -21,7 +23,9 @@ export default function Home() {
       {/* <ShapeEditor /> */}
       {/* <CounterList /> */}
       {/* <ListTwo /> */}
-      <BucketList />
+      {/* <BucketList /> */}
+      <NewBucketList />
+      {/* <Practice /> */}
     </>
   );
 }
