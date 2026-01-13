@@ -3,12 +3,14 @@ import Counter from "./components/Counter";
 import CounterList from "./components/CounterList";
 import Form from "./components/Form";
 import Formm from "./components/Formm";
+import Formmm from "./components/Formmm";
 import List from "./components/List";
 import ListTwo from "./components/ListTwo";
 import Message from "./components/Message";
 import MovingDot from "./components/MovingDot";
 import NewBucketList from "./components/NewBucketList";
 import Practice from "./components/Practice";
+import QuizForm from "./components/QuizForm";
 import ShapeEditor from "./components/ShapeEditor";
 
 export default function Home() {
@@ -24,8 +26,10 @@ export default function Home() {
       {/* <CounterList /> */}
       {/* <ListTwo /> */}
       {/* <BucketList /> */}
-      <NewBucketList />
+      {/* <NewBucketList /> */}
       {/* <Practice /> */}
+      {/* <QuizForm /> */}
+      <Formmm />
     </>
   );
 }
